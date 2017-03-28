@@ -29,18 +29,51 @@
   display:block;
 }
 
+
 #enlace {
-  display: block;
+  margin: 0% 0% 10% 45%;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: "Times New Roman", Times, serif;
+  color: #C0B283;
+  font-size: 20px;
+  background: #373737;
+  padding: 10px 20px 10px 20px;
   text-decoration: none;
-  color: black;
-  margin: 0% 5% 20% 40%;
 }
 
-#enlace1 {
-  display: block;
+#enlace:hover {
+  background: #828082;
+  background-image: -webkit-linear-gradient(top, #828082, #373737);
+  background-image: -moz-linear-gradient(top, #828082, #373737);
+  background-image: -ms-linear-gradient(top, #828082, #373737);
+  background-image: -o-linear-gradient(top, #828082, #373737);
+  background-image: linear-gradient(to bottom, #828082, #373737);
   text-decoration: none;
-  color: black;
+}
+
+#iniprueba {
   margin: 0% 0% 10% 45%;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: "Times New Roman", Times, serif;
+  color: #C0B283;
+  font-size: 20px;
+  background: #373737;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#iniprueba:hover {
+  background: #828082;
+  background-image: -webkit-linear-gradient(top, #828082, #373737);
+  background-image: -moz-linear-gradient(top, #828082, #373737);
+  background-image: -ms-linear-gradient(top, #828082, #373737);
+  background-image: -o-linear-gradient(top, #828082, #373737);
+  background-image: linear-gradient(to bottom, #828082, #373737);
+  text-decoration: none;
 }
 
 #examen {
@@ -59,7 +92,7 @@
 #resultados {
   background: #DCD0C0;
   width: 80%;
-  height: 0%;
+  height: 60%;
   margin:auto;
   color: black;
   font-size: 20px;
