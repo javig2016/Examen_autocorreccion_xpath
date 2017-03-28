@@ -15,14 +15,13 @@ var xsl_Doc = null;
 
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos entre otras acciones.
-window.onload = function(){ 
+window.onload = function() { 
 
   //Se carga el formulario
   formElement=document.getElementById("examen");
    //Corrección cuando se pulsa el botón del formulario
-  formElement.onsubmit=function(){
-    if(comprobar())
-    {
+  formElement.onsubmit=function() {
+    if(comprobar()){
       inicializar();
       //Corregir pregunta 1 texto
       corregirTXT(formElement.getElementsByClassName("texto")[0].value, answer1_txt,
@@ -62,12 +61,12 @@ window.onload = function(){
  xhttp.send();
 
   //LEER XSL de xml/questions.xml
- var xhttp2 = new XMLHttpRequest();
- xhttp2.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-   xsl_Doc=this.responseXML;
-  }
- };
+  var xhttp2 = new XMLHttpRequest();
+  xhttp2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     xsl_Doc=this.responseXML;
+    }
+  };
  xhttp2.open("GET", "xml/questions.xsl", true);
  xhttp2.send();
 }
@@ -102,7 +101,7 @@ function gestionarXml(datosXml){
   preg_HTML = document.getElementById("preg002");
   rad_HTML = document.getElementsByClassName("radio")[0];
   opciones = xml_Doc.getElementById("preg002").getElementsByTagName("option").length;
-  for(i = 0; i < opciones; i++)  {
+  for(i = 0; i < opciones; i++) {
     chkbx_radi_opciones[i] = xml_Doc.getElementById("preg002").getElementsByTagName("option")[i].innerHTML;
   }
   ponerDatosCheckboxHtmlrad(preg_HTML, pregXML, rad_HTML, chkbx_radi_opciones, "programa", "radio");
@@ -159,7 +158,7 @@ function gestionarXml(datosXml){
   }
   ponerDatosCheckboxHtml(preg_HTML, pregXML, chkbx_HTML, chkbx_radi_opciones, "elementos", "checkbox");
   res_chkbx = xml_Doc.getElementById("preg007").getElementsByTagName("answer").length;
-  for(i = 0; i < res_chkbx; i++)  {
+  for(i = 0; i < res_chkbx; i++) {
     answer7_check[i] = parseInt(xml_Doc.getElementById("preg007").getElementsByTagName("answer")[i].innerHTML);
   }
   chkbx_radi_opciones = [];
@@ -169,13 +168,12 @@ function gestionarXml(datosXml){
   preg_HTML = document.getElementById("preg008");
   select_HTML = document.getElementsByTagName("select")[2];
   opciones = xml_Doc.getElementById("preg008").getElementsByTagName("option").length;
-  for(i = 0; i < opciones; i++)  {
+  for(i = 0; i < opciones; i++) {
     sel_mul_opciones[i] = xml_Doc.getElementById("preg008").getElementsByTagName("option")[i].innerHTML;
   }
   ponerDatosSelectHtml(preg_HTML, pregXML, select_HTML, sel_mul_opciones);
   res_mul = xml_Doc.getElementById("preg008").getElementsByTagName("answer").length;
-  for(i = 0; i < res_mul; i++)
-  {
+  for(i = 0; i < res_mul; i++) {
     answer8_mul[i] = parseInt(xml_Doc.getElementById("preg008").getElementsByTagName("answer")[i].innerHTML);
   }
 
@@ -189,7 +187,7 @@ function gestionarXml(datosXml){
   }
   ponerDatosCheckboxHtml(preg_HTML, pregXML, chkbx_HTML, chkbx_radi_opciones, "formatos", "checkbox");
   res_chkbx = xml_Doc.getElementById("preg009").getElementsByTagName("answer").length;
-  for(i = 0; i < res_chkbx; i++)  {
+  for(i = 0; i < res_chkbx; i++) {
     answer9_check[i] = parseInt(xml_Doc.getElementById("preg009").getElementsByTagName("answer")[i].innerHTML);
   }
   chkbx_radi_opciones = [];
@@ -204,8 +202,7 @@ function gestionarXml(datosXml){
   }
   ponerDatosSelectHtml(preg_HTML, pregXML, select_HTML, sel_mul_opciones);
   res_mul = xml_Doc.getElementById("preg010").getElementsByTagName("answer").length;
-  for(i = 0; i < res_mul; i++)
-  {
+  for(i = 0; i < res_mul; i++) {
     answer10_mul[i] = parseInt(xml_Doc.getElementById("preg010").getElementsByTagName("answer")[i].innerHTML);
   }
 
@@ -234,7 +231,6 @@ function corregirRadio(radio, correcto, preguntaXML, atributo) {
     }
   }
   if(value == correcto) {
-
     nota += 1;
   }
   useranswer = xml_Doc.createElement("useranswer");
@@ -245,27 +241,21 @@ function corregirRadio(radio, correcto, preguntaXML, atributo) {
 
 function corregirMultiple(multi, correcto, preguntaXML) {
   var escorrecta = [];
-  for(i = 0; i < multi.length; i++)
-  {
-    if(multi[i].selected)
-    {
+  for(i = 0; i < multi.length; i++) {
+    if(multi[i].selected) {
       useranswer = xml_Doc.createElement("useranswer");
       useranswer.innerHTML = i+1;
       preguntaXML.appendChild(useranswer);
       escorrecta[i] = false;
-      for (j = 0; j < correcto.length; j++)
-      {
-        if(i == correcto[j])
-        {
+      for (j = 0; j < correcto.length; j++) {
+        if(i == correcto[j]) {
           escorrecta[i] = true;
         }
       }
-      if(escorrecta[i])
-      {
+      if(escorrecta[i]) {
         nota += 1/correcto.length;
       }
-      else
-      {
+      else {
         nota -= 1/correcto.length;
       }
     }
@@ -283,29 +273,23 @@ function corregirSelect(select, correcto, preguntaXML) {
 }
 
 
-function corregirCheckbox(checkbox, correctas, preguntaXML){
+function corregirCheckbox(checkbox, correctas, preguntaXML) {
   var escorrecta = [];
-  for(i = 0; i < checkbox.length; i++)
-  {
-    if(checkbox[i].checked)
-    {
+  for(i = 0; i < checkbox.length; i++) {
+    if(checkbox[i].checked) {
       useranswer = xml_Doc.createElement("useranswer");
       useranswer.innerHTML = i+1;
       preguntaXML.appendChild(useranswer);
       escorrecta[i] = false;
-      for (j = 0; j < correctas.length; j++)
-      {
-        if(i == correctas[j])
-        {
+      for (j = 0; j < correctas.length; j++) {
+        if(i == correctas[j]) {
           escorrecta[i] = true;
         }
       }
-      if(escorrecta[i])
-      {
+      if(escorrecta[i]) {
         nota += 1/correctas.length;
       }
-      else
-      {
+      else {
         nota -= 1/correctas.length;
       }
     }
@@ -374,7 +358,7 @@ function ponerDatosCheckboxHtml(elementoHTML, elementoXML, chkbx_HTML, checkboxO
 //Gestionar la presentación de las respuestas
 
 
-function darRespuestaHtml(r){
+function darRespuestaHtml(r) {
  var p = document.createElement("p");
  var node = document.createTextNode(r);
  p.appendChild(node);
@@ -383,6 +367,7 @@ function darRespuestaHtml(r){
 
 
 function presentarNota() {
+  document.getElementById("examen").style.display = "none";
   document.getElementById("resultados").style.display = "block";
   //Código transformación xslt con xml_Doc y xsl_Doc
   if (document.implementation && document.implementation.createDocument) {
@@ -391,11 +376,10 @@ function presentarNota() {
     resultDocument = xsltProcessor.transformToFragment(xml_Doc, document);
     document.getElementById("resultados").appendChild(resultDocument);
   }
-  darRespuestaHtml("Tu nota es de "+nota+" sobre 10 puntos.");
+  darRespuestaHtml("Tu nota es de "+nota.toFixed(2)+" sobre 10 puntos.");
 }
 
-function comprobar(formulario)
-{
+function comprobar(formulario) {
   var comprobarOK = true;
   var programaCheck = false;
   var interferenciaCheck = false;
@@ -403,92 +387,99 @@ function comprobar(formulario)
   var formatosCheck = false;
   var multi1Check = false;
   var multi2Check = false;
-  if(formElement.getElementsByClassName("texto")[0].value == "")
-  {
-    alert("Pregunta 1 vacia");
+  
+  //comprobación respuesta pregunta 1
+  if(formElement.getElementsByClassName("texto")[0].value == "") {
+    alert("Introduzca una respuesta en la pregunta 1");
     comprobarOK = false;
   }
-  if(formElement.getElementsByClassName("texto")[1].value == "")
-  {
-    alert("Pregunta 3 vacia");
-    comprobarOK = false;
-  }
-  if(formElement.getElementsByTagName("select")[0].selectedIndex == 0)
-  {
-    alert("Pregunta 4 vacia");
-    comprobarOK = false;
-  }
-  if(formElement.getElementsByTagName("select")[1].selectedIndex == 0)
-  {
-    alert("Pregunta 6 vacia");
-    comprobarOK = false;
-  }
+
+  //comprobación respuesta pregunta 2
   for (var i = 0; i < formElement.programa.length; i++) {
-    if(formElement.programa[i].checked)
-    {
+    if(formElement.programa[i].checked) {
       programaCheck = true;
     }
   }
-  if(!programaCheck)
-  {
-    alert("pregunta 2 vacia");
+  if(!programaCheck) {
+    alert("Marque una respuesta en la pregunta 2");
     comprobarOK = false;
   }
+
+  //comprobación respuesta pregunta 3
+  if(formElement.getElementsByClassName("texto")[1].value == "") {
+    alert("Introduzca una respuesta en la pregunta 3");
+    comprobarOK = false;
+  }
+
+  //comprobación respuesta pregunta 4
+  if(formElement.getElementsByTagName("select")[0].selectedIndex == 0) {
+    alert("Seleccione una respuesta en la pregunta 4");
+    comprobarOK = false;
+  }
+
+  //comprobación respuesta pregunta 5
   for (var i = 0; i < formElement.interferencia.length; i++) {
-    if(formElement.interferencia[i].checked)
-    {
+    if(formElement.interferencia[i].checked) {
       interferenciaCheck = true;
     }
   }
-  if(!interferenciaCheck)
-  {
-    alert("pregunta 5 vacia");
+  if(!interferenciaCheck) {
+    alert("Marque una respuesta en la pregunta 5");
     comprobarOK = false;
   }
+
+  //comprobación respuesta pregunta 6
+  if(formElement.getElementsByTagName("select")[1].selectedIndex == 0) {
+    alert("Seleccione una respuesta en la pregunta 6");
+    comprobarOK = false;
+  }
+
+  //comprobación respuesta pregunta 7
   for (var i = 0; i < formElement.elementos.length; i++) {
-    if(formElement.elementos[i].checked)
-    {
+    if(formElement.elementos[i].checked) {
       elementosCheck = true;
     }
   }
-  if(!elementosCheck)
-  {
-    alert("pregunta 7 vacia");
+  if(!elementosCheck) {
+    alert("Marque al menos una opción de la pregunta 7");
     comprobarOK = false;
   }
-  for (var i = 0; i < formElement.formatos.length; i++) {
-    if(formElement.formatos[i].checked)
-    {
-      formatosCheck = true;
-    }
-  }
-  if(!formatosCheck)
-  {
-    alert("pregunta 9 vacia");
-    comprobarOK = false;
-  }
+
+  //comprobación respuesta pregunta 8
   for (var i = 0; i < formElement.getElementsByTagName("select")[2].length; i++) {
-    if(formElement.getElementsByTagName("select")[2][i].selected)
-    {
+    if(formElement.getElementsByTagName("select")[2][i].selected) {
       multi1Check = true;
     }
   }
   if(!multi1Check)
   {
-    alert("pregunta 8 vacia");
+    alert("Seleccione al menos una opción de la pregunta 8");
     comprobarOK = false;
   }
+
+  //comprobación respuesta pregunta 9
+  for (var i = 0; i < formElement.formatos.length; i++) {
+    if(formElement.formatos[i].checked) {
+      formatosCheck = true;
+    }
+  }
+  if(!formatosCheck) {
+    alert("Marque al menos una opción de la pregunta 9");
+    comprobarOK = false;
+  }
+
+  
+  //comprobación respuesta pregunta 10
   for (var i = 0; i < formElement.getElementsByTagName("select")[3].length; i++) {
-    if(formElement.getElementsByTagName("select")[3][i].selected)
-    {
+    if(formElement.getElementsByTagName("select")[3][i].selected) {
       multi2Check = true;
     }
   }
-  if(!multi2Check)
-  {
-    alert("pregunta 10 vacia");
+  if(!multi2Check) {
+    alert("Seleccione al menos una opción de la pregunta 10");
     comprobarOK = false;
   }
+  else return true;
 }
 
 
