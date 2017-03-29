@@ -64,7 +64,7 @@
 		<option>a) Ya es imposible recuperarlo</option>
 		<option>b) Se puede recuperar desde la papelera de reciclaje</option>
 		<option>c) Permanece en la papelera de reciclaje hasta que se vacía</option>
-		<option>c) Todas las opciones son incorrectas</option>
+		<option>d) Todas las opciones son incorrectas</option>
 		<answer>1</answer>
 		<answer>2</answer>
 	</question>
@@ -76,7 +76,7 @@
 		<option>c) XLS</option>
 		<option>d) SWF</option>
 		<answer>1</answer>
-		<answer>4</answer>
+		<answer>3</answer>
 	</question>
 	<question id="preg010">
 		<type>multiple</type>
