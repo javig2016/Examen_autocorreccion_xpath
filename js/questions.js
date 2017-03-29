@@ -21,7 +21,7 @@ window.onload = function() {
   formElement=document.getElementById("examen");
    //Corrección cuando se pulsa el botón del formulario
   formElement.onsubmit=function() {
-    /*if(comprobar()){*/
+    if(comprobar()){
       inicializar();
       //Corregir pregunta 1 texto
       corregirTXT(formElement.getElementsByClassName("texto")[0].value, answer1_txt, xml_Doc.getElementById("preg001"));
@@ -44,7 +44,7 @@ window.onload = function() {
      //Corregir pregunta 10 multiple
       corregirMultiple(formElement.getElementsByTagName("select")[3], answer10_mul, xml_Doc.getElementById("preg010"));
       presentarNota();
-    
+    }
     return false;
   }
 
@@ -207,12 +207,12 @@ function corregirTXT(valor, correcto, preguntaXML) {
 
 
 function corregirRadio(radio, correcto, preguntaXML, atributo) {
-  var value = -1;//Este valor se debe a que no hay selección para comparar
+  var value;//Este valor se debe a que no hay selección para comparar
   for(i = 0; i < radio.length; i++) {
     if(radio[i].checked) {//si se encuentra lo seleccionado, se cambia value y se sale
       value = i;
       useranswer = xml_Doc.createElement("useranswer");
-      useranswer.innerHTML = value;
+      useranswer.innerHTML = i+1;
       preguntaXML.appendChild(useranswer);
       break;
     }
