@@ -53,7 +53,6 @@ window.onload = function() {
  xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
      gestionarXml(this);
-     Reloj();
     }
  };
  xhttp.open("GET", "xml/questions.xml", true);
@@ -326,7 +325,6 @@ function ponerDatosCheckboxHtml(elementoHTML, elementoXML, checkboxradioHTML, no
   }
 }
 
-
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
 
@@ -456,56 +454,7 @@ function comprobar(formulario) {
 }
 
 
-/*function inicializar() {
+function inicializar() {
   document.getElementById("resultados").innerHTML = "";
   nota = 0;
-}*/
-
-
-//****************************************************************************************************
-//Temporizador
-function Reloj() {
-  segundos =5;
-  minutos =0;
-  s = document.getElementById("segundos");
-  m = document.getElementById("minutos");
-  m.innerHTML = minutos;
-  // no interesa tambien una linea como la siguiente?
-  // s.innerHTML = segundos;
-  // meto la funcion del reloj en una variable tickTick
-  tickTick = setInterval(function() {
-    if(segundos>0) {
-      segundos--;
-      if (segundos<10) {
-        segundos = "0"+segundos;//Añade '0' cuando los segundos son < 10.
-      }
-      s.innerHTML=segundos;
-    }            
-    else {
-      if(minutos>0) {
-        minutos--;
-        if (minutos<10) {
-          minutos = "0"+minutos;
-        }//Añade '0' cuando los minutos son < 10
-        m.innerHTML=minutos;
-        segundos=59;
-        s.innerHTML=segundos;
-      }
-      else {
-        stop();
-        // creo que la siguiente linea te sobra
-        //  clearInterval();
-      }//Detiene la aplicacion y muestra resultado.
-    }
-  } ,1000);
-
-}
- 
-function stop(){
-  alert("Se acabo su tiempo");
-  // clearInterval();
-  clearInterval(tickTick);
-  presentarNota();
-  // creo que hace falta esta linea
-  return false;
 }
