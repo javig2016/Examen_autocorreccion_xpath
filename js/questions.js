@@ -212,7 +212,7 @@ function corregirRadio(radio, correcto, preguntaXML, atributo) {
     if(radio[i].checked) {//si se encuentra lo seleccionado, se cambia value y se sale
       value = i;
       useranswer = xml_Doc.createElement("useranswer");
-      useranswer.innerHTML = i+1;
+      useranswer.innerHTML = value+1;
       preguntaXML.appendChild(useranswer);
       break;
     }
