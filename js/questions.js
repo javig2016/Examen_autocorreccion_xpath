@@ -26,7 +26,7 @@ window.onload = function() {
       //Corregir pregunta 1 texto
       corregirTXT(formElement.getElementsByClassName("texto")[0].value, answer1_txt, xml_Doc.getElementById("preg001"));
       //Corregir pregunt 2 radio
-      corregirRadio(formElement.programa, answer2_rad, xml_Doc.getElementById("preg002"));
+      corregirRadio(formElement.programa, answer2_rad, xml_Doc.getElementById("preg002"), "programa");
       //Corregir pregunta 3 texto
       corregirTXT(formElement.getElementsByClassName("texto")[1].value, answer3_txt, xml_Doc.getElementById("preg003"));
       //Corregir pregunta 4 select
@@ -76,7 +76,7 @@ window.onload = function() {
 // Recuperamos los datos del fichero XML xml/preguntas.xml
 // xml_Doc es el documento leido XML. 
 function gestionarXml(datosXml){
-  var xml_Doc = datosXml.responseXML; //Parse XML a xml_Doc
+  xml_Doc = datosXml.responseXML; //Parse XML a xml_Doc
   var preg_XML; //Acceder a la pregunta del archivo XML
   var preg_HTML;//Donde se ha de colocar la pregunta en el HTML
   var rad_HTML;//Obtener datos del HTML de pregunta radio
@@ -206,7 +206,7 @@ function corregirTXT(valor, correcto, preguntaXML) {
 }
 
 
-function corregirRadio(radio, correcto, preguntaXML) {
+function corregirRadio(radio, correcto, preguntaXML, atributo) {
   var value = -1;//Este valor se debe a que no hay selección para comparar
   for(i = 0; i < radio.length; i++) {
     if(radio[i].checked) {//si se encuentra lo seleccionado, se cambia value y se sale
