@@ -8,22 +8,21 @@ Se ha seguido usado una combinación de los temas vistos hasta ahora: HTML, CSS,
 ##Fases del proyecto:
 
 1. Se ha revisado el enunciado de la práctica y los temas tratados en el foro de la asignatura, que han servido de gran ayuda para la elaboración del proyecto, entre los comentarios y ayuda de compañeros y del profesor.
-2. Se han buscado algunas imágenes para modificar otras ya creadas.
-3. Crear y editar las imágenes.
-4. Revisión de la página principal de la universidad y los archivos css a la vez, donde se introdujo el formato a todos los documentos html del proyecto.
-5. Se ha realizado el archivo XML y se ha revisado su correcta construcción mediante la correcta validación con DTD. Usando la siguiente web para revisar el documento: http://www.xmlvalidation.com/
-6. Tras esto se ha procedido a realizar la validación mediante otro mecanismo, usando XML schema, es decir se ha vuelto a validar el archivo XML, pero esta vez con XSD, en la misma web anterior.
-7. Tras ver la correcta validación del archivo XML, se ha realizado el documento JavaScript para su implantación y adaptación en la página web. Realizando también los enlaces con el archivo XML y HTML.
-8. Se ha revisado el correcto funcionamiento de las funciones indicadas en JavaScript.
-9. Se ha probado la web en diferentes resoluciones y diferentes navegadores, para probar la visualización en distintos dispositivos.
+2. Se ha modificado el archivo original de javascript para adaptarlo a XPATH y así conseguir otra forma de mostrar las posibles soluciones de cada pregunta select, select múltiple, checkbox y radio. Realizando de esta manera los enlaces con el archivo XML y HTML.
+3. Se han introducido modificaciones en html, como una página más, para diferenciar las instrucciones de elaboración del examen, dejando solamente el examen en una página web.
+4. También se han revisado todas las páginas de la universidad y los archivos CSS a la vez, donde se introdujo el formato a todos los documentos html del proyecto. En las páginas y html se han modificado los botones de pulsación y se les ha dado configuración mediante los archivos CSS correspondientes. También se ha revisado su correcta ubicación y funcionamiento.
+5. Se ha revisado el archivo XML ya que tenía algunos datos que actualizar en algunas preguntas y a su vez se ha configurado para que funcione con XSLT y se vea su transformación con el archivo "transform.xsl" si se ejecutara el archivo xml en cualquier navegador. Se ha vuelto a revisar su correcta construcción mediante la correcta validación con XML schema. Usando la siguiente web para revisar el documento: http://www.xmlvalidation.com/
+6. Se ha revisado el correcto funcionamiento de las funciones indicadas en JavaScript.
+7. Se ha introducido código en javascript para forzar al usuario a rellenar todas las preguntas del formulario, advirtiendo la pregunta o preguntas que se han dejado sin contestar.
+8. Se ha probado la web en diferentes resoluciones y diferentes navegadores, para probar la visualización en distintos dispositivos.
 10. Revisión de que todas las páginas html y los archivos de diseño css están correctamente creados y no contienen errores, mediante las herramientas de validación de W3C.
 
 A continuación se pasan a indicar características especiales a reseñar de la práctica:
 ### * Imágenes adaptadas:
-Las imágenes de la web han sido optimizadas mediante la propia herramienta de dibujo GIMP y el programa PNGGauntlet.
+Las imágenes de la web fueron optimizadas en la anterior unidad mediante la propia herramienta de dibujo GIMP y el programa PNGGauntlet.
 
 ### * Versión dispositivos móviles:
-Se ha adaptado el proyecto para la visualización de la web en dispositivos móviles, de esa manera se observa el correcto funcionamiento y la posibilidad de ver todo correctamente.
+Se ha verificado la adaptación al proyecto para la visualización de la web en dispositivos móviles, de esa manera se observa el correcto funcionamiento y la posibilidad de ver todo correctamente.
 La configuración ha sido trasladada a todos los documentos html del proyecto.
 Para ello se han usado 2 archivos css, uno denominado *__d.css__*, que se usará para la página web normal, en navegadores de ordenadores con unas resoluciones normales, y otro archivo denominado *__m.css__*, que se usará cuando el navegador tenga una resolución para dispositivos móviles.
 
