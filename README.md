@@ -40,7 +40,7 @@ Esta otra versión se ha realizado con la ayuda de la siguiente web [HTML Minifi
 Hay que tener en cuenta que los archivos de javascript (questions.js), questions.xml, questions.dtd, questions.xsl y transform.xsl no se han reducido, debido a que provocaban problemas a la hora de verificar su correcto funcionamiento. Se ha verificado su correcto funcionamiento en el navegador, pero en la web RawGit no funciona.
 
 ##Enlaces a fuentes de las imágenes:
-Todas las imágenes que se han usado están etiquetadas con licencia de reutilización con modificaciones.
+Todas las imágenes que se han usado son las mismas de la unidad 3.
 
 Imagen logo universidad:
 [Imagen logo](http://res.freestockphotos.biz/pictures/16/16246-illustration-of-a-graduation-cap-pv.png)
@@ -49,7 +49,7 @@ Imagen rectorado:
 [Imagen rectorado](https://s.iha.com/2556200015384/Alquiler-vacaciones-encanto-Campos-SEGLES_15.jpegg)
 
 
-Se han retocado las imágenes con la herramienta de dibujo [GIMP](https://www.gimp.org/).
+Su retoque ya se realizó en la unidad 3 con la herramienta de dibujo [GIMP](https://www.gimp.org/).
 
 ***
 ##Fuentes de ayuda:
