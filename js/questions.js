@@ -221,7 +221,7 @@ function corregirTXT(valor, correcto, preguntaXML) {
 }
 
 
-function corregirRadio(radio, correcto, preguntaXML, atributo) {
+function corregirRadio(radio, correcto, preguntaXML) {
   var value = -1;//Este valor se debe a que no hay selección para comparar
   for(i = 0; i < radio.length; i++) {
     if(radio[i].checked) {//si se encuentra lo seleccionado, se cambia value y se sale
