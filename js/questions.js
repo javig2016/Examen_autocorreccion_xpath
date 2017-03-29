@@ -88,7 +88,7 @@ function gestionarXml(datosXml){
   var res_chkbx;//Cantidad de respuestas en checkbox
   var res_mul;//Cantidad de respuestas en multiple
   var xpath;
-  var nodesCheckbox;
+  var nodesSelect;
 
  //Pregunta 1 texto
   preg_XML = xml_Doc.getElementsByTagName("title")[0].innerHTML;
@@ -145,8 +145,8 @@ function gestionarXml(datosXml){
   preg_HTML = document.getElementById("preg007");
   chkbx_HTML = document.getElementsByClassName("checkbox")[0];
   xpath = "/questions/question[@id='preg007']/option";
-  nodesCheckbox = xml_Doc.evaluate(xpath, xml_Doc, null, XPathResult.ANY_TYPE, null);
-  ponerDatosCheckboxHtml(preg_HTML, preg_XML, chkbx_HTML, nodesCheckbox);
+  opciones = xml_Doc.evaluate(xpath, xml_Doc, null, XPathResult.ANY_TYPE, null);
+  ponerDatosCheckboxHtml(preg_HTML, preg_XML, chkbx_HTML, opciones, "elementos", "checkbox");
   res_chkbx = xml_Doc.getElementById("preg007").getElementsByTagName("answer").length;
   for(i = 0; i < res_chkbx; i++) {
     answer7_check[i] = parseInt(xml_Doc.getElementById("preg007").getElementsByTagName("answer")[i].innerHTML);
@@ -170,8 +170,8 @@ function gestionarXml(datosXml){
   preg_HTML = document.getElementById("preg009");
   chkbx_HTML = document.getElementsByClassName("checkbox")[1];
   xpath = "/questions/question[@id='preg009']/option";
-  nodesCheckbox = xml_Doc.evaluate(xpath, xml_Doc, null, XPathResult.ANY_TYPE, null);
-  ponerDatosCheckboxHtml(preg_HTML, preg_XML, chkbx_HTML, nodesCheckbox);
+  opciones = xml_Doc.evaluate(xpath, xml_Doc, null, XPathResult.ANY_TYPE, null);
+  ponerDatosCheckboxHtml(preg_HTML, preg_XML, chkbx_HTML, opciones, "formatos", "checkbox");
   res_chkbx = xml_Doc.getElementById("preg009").getElementsByTagName("answer").length;
   for(i = 0; i < res_chkbx; i++) {
     answer9_check[i] = parseInt(xml_Doc.getElementById("preg009").getElementsByTagName("answer")[i].innerHTML);
@@ -305,24 +305,21 @@ function ponerDatosSelectHtml(elementoHTML, elementoXML, select, nodesct) {
 }
 
 
-function ponerDatosCheckboxHtml(elementoHTML, elementoXML, chkbx_HTML, nodeschbx) {
+function ponerDatosCheckboxHtml(elementoHTML, elementoXML, chkbx_HTML, checkboxOpciones, atributo, tipo) {
   elementoHTML.innerHTML = elementoXML;
-//  var checkboxContainer=document.getElementById('checkbox');
-  var result = nodeschbx.iterateNext();
-  i=0;
-  while (result) {
-   var input = document.createElement("input");
-   var label = document.createElement("label");   
-   label.innerHTML = result.innerHTML
-   label.setAttribute("for", "color_"+i);
-   input.type="checkbox";
-   input.name="color";
-   input.id="color_"+i; i++;
-   chkbx_HTML.appendChild(input);
-   chkbx_HTML.appendChild(label);
-   chkbx_HTML.appendChild(document.createElement("br"));
-   result = nodeschbx.iterateNext();
-  }    
+  var input;
+  var label;
+  for (i = 0; i < checkboxOpciones.length; i++) {
+    input = document.createElement("input");
+    label = document.createElement("label");
+    label.innerHTML = checkboxOpciones[i];
+    label.setAttribute("id", atributo+i);
+    input.type = tipo;
+    input.name = atributo;
+    chkbx_HTML.appendChild(input);
+    chkbx_HTML.appendChild(label);
+    chkbx_HTML.appendChild(document.createElement("br"));
+  }
 }
 
 
