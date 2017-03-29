@@ -46,7 +46,6 @@ window.onload = function() {
       corregirMultiple(formElement.getElementsByTagName("select")[3], answer10_mul, xml_Doc.getElementById("preg010"));
       presentarNota();
     }
-    
     return false;
   }
 
@@ -479,7 +478,7 @@ function comprobar(formulario) {
     alert("Seleccione al menos una opción de la pregunta 10");
     comprobarOK = false;
   }
-  else return true;
+  else return comprobarOK;
 }
 
 
