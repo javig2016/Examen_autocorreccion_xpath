@@ -305,23 +305,24 @@ function ponerDatosSelectHtml(elementoHTML, elementoXML, select, nodesct) {
 }
 
 
-function ponerDatosCheckboxHtml(elementoHTML, elementoXML, chkbx_HTML, checkboxOpciones, atributo, tipo) {
+function ponerDatosCheckboxHtml(elementoHTML, elementoXML, checkboxradioHTML, nodos, atributo, tipo){
   elementoHTML.innerHTML = elementoXML;
   var input;
   var label;
-  for (i = 0; i < checkboxOpciones.length; i++) {
+  var i = 0;
+  for (var resultado = nodos.iterateNext(); resultado; resultado = nodos.iterateNext())
+  {
     input = document.createElement("input");
     label = document.createElement("label");
-    label.innerHTML = checkboxOpciones[i];
+    label.innerHTML = resultado.innerHTML;
     label.setAttribute("id", atributo+i);
     input.type = tipo;
     input.name = atributo;
-    chkbx_HTML.appendChild(input);
-    chkbx_HTML.appendChild(label);
-    chkbx_HTML.appendChild(document.createElement("br"));
+    checkboxradioHTML.appendChild(input);
+    checkboxradioHTML.appendChild(label);
+    checkboxradioHTML.appendChild(document.createElement("br"));
   }
 }
-
 
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
