@@ -13,6 +13,7 @@ var nota = 0;  //nota de la prueba sobre 10 puntos (tenemos 10  preguntas)
 var xml_Doc;
 var xsl_Doc = null;
 
+
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos entre otras acciones.
 window.onload = function() { 
@@ -492,6 +493,7 @@ function Reloj() {
         s.innerHTML=segundos;
       }
       else {
+        clearInterval(tickTick);
         stop();
         // creo que la siguiente linea te sobra
         //  clearInterval();
@@ -504,8 +506,8 @@ function Reloj() {
 function stop(){
   alert("Se acabo su tiempo");
   // clearInterval();
-  clearInterval(tickTick);
   presentarNota();
+  console.log(resultados);
   // creo que hace falta esta linea
   return false;
 }
