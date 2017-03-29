@@ -8,14 +8,14 @@ Se ha seguido usado una combinación de los temas vistos hasta ahora: HTML, CSS,
 ##Fases del proyecto:
 
 1. Se ha revisado el enunciado de la práctica y los temas tratados en el foro de la asignatura, que han servido de gran ayuda para la elaboración del proyecto, entre los comentarios y ayuda de compañeros y del profesor.
-2. Se ha modificado el archivo original de javascript para adaptarlo a XPATH y así conseguir otra forma de mostrar las posibles soluciones de cada pregunta select, select múltiple, checkbox y radio. Realizando de esta manera los enlaces con el archivo XML y HTML.
+2. Se ha modificado el archivo empleado en la unidad 3 de javascript para adaptarlo a XPATH y así conseguir otra forma de mostrar las posibles soluciones de cada pregunta select, select múltiple, checkbox y radio. Realizando de esta manera los enlaces con el archivo XML y HTML.
 3. Se han introducido modificaciones en html, como una página más, para diferenciar las instrucciones de elaboración del examen, dejando solamente el examen en una página web.
-4. También se han revisado todas las páginas de la universidad y los archivos CSS a la vez, donde se introdujo el formato a todos los documentos html del proyecto. En las páginas y html se han modificado los botones de pulsación y se les ha dado configuración mediante los archivos CSS correspondientes. También se ha revisado su correcta ubicación y funcionamiento.
-5. Se ha revisado el archivo XML ya que tenía algunos datos que actualizar en algunas preguntas y a su vez se ha configurado para que funcione con XSLT y se vea su transformación con el archivo "transform.xsl" si se ejecutara el archivo xml en cualquier navegador. Se ha vuelto a revisar su correcta construcción mediante la correcta validación con XML schema. Usando la siguiente web para revisar el documento: http://www.xmlvalidation.com/
+4. También se han revisado todas las páginas de la universidad y los archivos CSS a la vez, donde se introdujo el formato a todos los documentos html del proyecto. En las páginas html se han modificado los botones de pulsación y se les ha dado configuración mediante los archivos CSS correspondientes. También se ha revisado su correcta ubicación y funcionamiento.
+5. Se ha revisado el archivo XML ya que tenía algunos datos que actualizar en algunas preguntas y a su vez se ha configurado para que funcione con XSLT y se vea su transformación con el archivo "transform.xsl" si se ejecutara el archivo XML en cualquier navegador. Se ha vuelto a revisar su correcta construcción mediante la correcta validación con XML schema. Usando la siguiente web para revisar el documento: http://www.xmlvalidation.com/. Se ha cambiado el diseño de la presentación del archivo XML.
 6. Se ha revisado el correcto funcionamiento de las funciones indicadas en JavaScript.
 7. Se ha introducido código en javascript para forzar al usuario a rellenar todas las preguntas del formulario, advirtiendo la pregunta o preguntas que se han dejado sin contestar.
 8. Se ha probado la web en diferentes resoluciones y diferentes navegadores, para probar la visualización en distintos dispositivos.
-10. Revisión de que todas las páginas html y los archivos de diseño css están correctamente creados y no contienen errores, mediante las herramientas de validación de W3C.
+9. Revisión de que todas las páginas html y los archivos de diseño css están correctamente creados y no contienen errores, mediante las herramientas de validación de W3C.
 
 A continuación se pasan a indicar características especiales a reseñar de la práctica:
 ### * Imágenes adaptadas:
@@ -29,12 +29,15 @@ Para ello se han usado 2 archivos css, uno denominado *__d.css__*, que se usará
 ### * Versión JavaScript:
 El proyecto se ha puesto en funcionamiento gracias al lenguaje JavaScript del que se han extraído  las funciones y herramientas para poder conectar las preguntas, respuestas, opciones y tipos de cuestiones del formulario XML, con el formulario en HTML.
 
+### * Versión XPATH y XSLT:
+Mediante estos lenguajes se ha conseguido que en principio con XPATH, alcancemos el archivo XML y no se necesite de otros elementos como los empleados en la unidad 3 para resolver las diferentes respuestas posibles de cada pregunta del cuestionario. Y con XSLT se ha cambiado la forma de presentar el propio XML en un navegador web y en la forma de presentar los resultados del cuestionario formulado.
+
 ### * Versión identada:
 La versión identada se corresponde con la master, por lo que no se ha creado ninguna rama para la indicada. Para realizar esta versión del html, se han revisado todos los elementos de la página web y se han colocado de la manera correcta para su mejor visualización. 
 
 ### * Versión reducida (_minify_):
 Esta otra versión se ha realizado con la ayuda de la siguiente web [HTML Minifier](http://www.willpeavy.com/minifier/), que ha permitido minimizar al máximo el espacio de cada uno de los documentos de la web y que funcione correctamente de cara a su uso. Esta versión se podrá ver en la rama identificada como minify.
-Hay que tener en cuenta que los archivos de javascript (questions.js), questions.xml y questions.dtd no se han reducido, debido a que provocaban problemas a la hora de verificar su correcto funcionamiento. Se ha verificado su correcto funcionamiento en el navegador, pero en la web RawGit no funciona.
+Hay que tener en cuenta que los archivos de javascript (questions.js), questions.xml, questions.dtd, questions.xsl y transform.xsl no se han reducido, debido a que provocaban problemas a la hora de verificar su correcto funcionamiento. Se ha verificado su correcto funcionamiento en el navegador, pero en la web RawGit no funciona.
 
 ##Enlaces a fuentes de las imágenes:
 Todas las imágenes que se han usado están etiquetadas con licencia de reutilización con modificaciones.
