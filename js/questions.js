@@ -470,7 +470,10 @@ function Reloj() {
   s = document.getElementById("segundos");
   m = document.getElementById("minutos");
   m.innerHTML = minutos;
-  setInterval(function() {
+  // no interesa tambien una linea como la siguiente?
+  // s.innerHTML = segundos;
+  // meto la funcion del reloj en una variable tickTick
+  tickTick = setInterval(function() {
     if(segundos>0) {
       segundos--;
       if (segundos<10) {
@@ -490,7 +493,8 @@ function Reloj() {
       }
       else {
         stop();
-          clearInterval();
+        // creo que la siguiente linea te sobra
+        //  clearInterval();
       }//Detiene la aplicacion y muestra resultado.
     }
   } ,1000);
@@ -499,8 +503,9 @@ function Reloj() {
  
 function stop(){
   alert("Se acabo su tiempo");
-  clearInterval();
+  // clearInterval();
+  clearInterval(tickTick);
   presentarNota();
-  console.log(presentarNota);
-
+  // creo que hace falta esta linea
+  return false;
 }
