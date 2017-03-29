@@ -1,7 +1,9 @@
 # Examen_autocorreccion_xpath
 
-Desarrollo del proyecto denominado [Examen_autocorreccion_xpath](https://github.com/javig2016/Examen_autocorreccion_xpath/). Este proyecto pertenece a la unidad 5 del módulo LMSGI y ha consistido en la modificación del proyecto anterior de la unidad 3, donde creamos ya un formulario. En el actual se ha tenidoelaboración de una web de una universidad inventada, donde se crea un formulario con unas preguntas que luego se han de corregir y dar los resultados de las mismas.
-Se ha usado una combinación de los temas vistos hasta ahora: HTML, CSS, JavaScript y además se ha añadido XML.
+Desarrollo del proyecto denominado [Examen_autocorreccion_xpath](https://github.com/javig2016/Examen_autocorreccion_xpath/). Este proyecto pertenece a la unidad 5 del módulo LMSGI y ha consistido en la modificación del proyecto anterior de la unidad 3, donde creamos ya un formulario. En el actual proyecto se ha modificado el anterior en el acceso al objeto xml_Doc del archivo javascript, que enlazaba con el documento xml, que contenía los datos de las preguntas, posibles respuestas y las respuestas correctas. Esta modificación se ha realizado mediante Xpath.
+Además se ha usado XSLT que ha permitido dar un visualización diferente al resultado de salida que se obtenía previamente.
+En el desarrollo del proyecto se han solucionado, modificado y mejorado problemas que presentaba el proyecto de la unidad 3.
+Se ha seguido usado una combinación de los temas vistos hasta ahora: HTML, CSS, JavaScript, XML y se ha añadido XPATH y XSLT.
 
 ##Fases del proyecto:
 
