@@ -117,14 +117,14 @@
 }
 
 #mensaje_examen {
-  margin: 0% 0% 5% 38%;
+  margin: 3% 0% 10% 34%;
   font-size: 20px;
 }
 
 #mensaje_examen2 {
   position: relative;
   bottom: 5%;
-  left: 88%;
+  left: 82%;
   transform: translate(-50%, -50%);
   font-size: 20px;
 }
@@ -143,6 +143,7 @@
   border:0;
   width:88px;
   height:31px;
+  float: right;
 }
 
 #instrucciones {
@@ -200,7 +201,7 @@ a:link{
 /*configuración menú horizontal pantalla inicial*/
 .paramenu {
   width: 40%;
-  margin: 1% 0 0 35%;
+  margin: 1% 0 0 30%;
   overflow:hidden;
   display: block;
 }
