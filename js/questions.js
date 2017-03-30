@@ -467,7 +467,7 @@ function inicializar() {
 //Cronómetro
 
 function Reloj() {
-  var segundos =5;
+  var segundos =20;
   var minutos =0;
   var s = document.getElementById("segundos");
   var m = document.getElementById("minutos");
@@ -523,6 +523,6 @@ function stop(){
       corregirCheckbox(formElement.formatos, answer9_check, xml_Doc.getElementById("preg009"));
      //Corregir pregunta 10 multiple
       corregirMultiple(formElement.getElementsByTagName("select")[3], answer10_mul, xml_Doc.getElementById("preg010"));
-        presentarNota();
+      presentarNota();
   return false;
 }
