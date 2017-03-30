@@ -130,13 +130,15 @@
 }
 
 #resultados {
-  background: #DCD0C0;
+  position: relative;
+  background: #F4F4F4
+  background-color: #DCD0C0;
   width: 80%;
   height: 60%;
-  margin:auto;
+  margin: auto;
   color: black;
   font-size: 20px;
-  text-align: justify;
+  text-align: center;
 }  
 
 #imgcss{
@@ -154,6 +156,20 @@
   font-size: 20px;
   text-align: justify;
 }
+
+
+#reloj{
+position: fixed;
+font-size: 42px;
+margin: 0% 65%;
+vertical-align:middle;
+color:black;
+}
+
+#minutos, #segundos {
+  font-size: 42px;
+}
+
 
 .caja1 {
   background: #DCD0C0;
@@ -182,6 +198,7 @@ h2 {
 }
 
 h5 {
+  bottom: 0;
   padding: 10px;
   background-color: #DCD0C0;
   color: black;
