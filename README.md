@@ -4,6 +4,7 @@ Desarrollo del proyecto denominado [Examen_autocorreccion_xpath](https://github.
 Además se ha usado XSLT que ha permitido dar una visualización diferente al resultado de salida que se obtenía previamente.
 En el desarrollo del proyecto se han solucionado, modificado y mejorado problemas que presentaba el proyecto de la unidad 3.
 Se ha seguido usado una combinación de los temas vistos hasta ahora: HTML, CSS, JavaScript, XML y se ha añadido XPATH y XSLT.
+Al final se ha conseguido implementar una "branch" para realizar la opción del reloj, no se ha podido revisar con mucho detenimiento por falta de tiempo, pero funciona correctamente.
 
 ##Fases del proyecto:
 
@@ -38,6 +39,9 @@ La versión identada se corresponde con la master, por lo que no se ha creado ni
 ### * Versión reducida (_minify_):
 Esta otra versión se ha realizado con la ayuda de la siguiente web [HTML Minifier](http://www.willpeavy.com/minifier/), que ha permitido minimizar al máximo el espacio de cada uno de los documentos de la web y que funcione correctamente de cara a su uso. Esta versión se podrá ver en la rama identificada como minify.
 Hay que tener en cuenta que los archivos de javascript (questions.js), questions.xml, questions.dtd, questions.xsl y transform.xsl no se han reducido, debido a que provocaban problemas a la hora de verificar su correcto funcionamiento. Se ha verificado su correcto funcionamiento en el navegador, pero en la web RawGit no funciona.
+
+### * Versión reloj (_reloj_):
+En esta "branch" o rama del proyecto se ha implementado un contador que da un tiempo máximo para la realización del cuestionario. Pasado el tiempo automáticamente se realiza la corrección pertinente. Con algo más de tiempo se podría haber implementado totalmente como versión master, pero no ha sido posible.
 
 ##Enlaces a fuentes de las imágenes:
 Todas las imágenes que se han usado son las mismas de la unidad 3.
