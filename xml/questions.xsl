@@ -40,7 +40,7 @@
                   <xsl:if test="$optposition=$correctanswer">
                     <span>&#x2713;</span>
                   </xsl:if>
-                 </xsl:for-each><br/><br/>
+                 </xsl:for-each><br/>
                </xsl:for-each>
               </td>
               <td>
@@ -62,7 +62,7 @@
                     </xsl:if>
                    </xsl:otherwise>
                   </xsl:choose>
-                 </xsl:for-each><br/><br/>
+                 </xsl:for-each><br/>
                </xsl:for-each>       
              </td>
               </tr>
