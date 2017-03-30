@@ -467,13 +467,12 @@ function inicializar() {
 //Cronómetro
 
 function Reloj() {
-  var segundos =20;
+  var segundos =50;
   var minutos =0;
   var s = document.getElementById("segundos");
   var m = document.getElementById("minutos");
   m.innerHTML = minutos;
-  // no interesa tambien una linea como la siguiente?
-  // s.innerHTML = segundos;
+  s.innerHTML = segundos;
   // meto la funcion del reloj en una variable tickTick
   tickTick = setInterval(function() {
     if(segundos>0) {
