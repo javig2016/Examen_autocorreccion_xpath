@@ -332,14 +332,6 @@ function ponerDatosCheckboxHtml(elementoHTML, elementoXML, checkboxradioHTML, no
 //Gestionar la presentación de las respuestas
 
 
-function darRespuestaHtml(r) {
- var p = document.createElement("p");
- var node = document.createTextNode(r);
- p.appendChild(node);
- document.getElementById("resultados").appendChild(p);
-}
-
-
 function presentarNota() {
   document.getElementById("examen").style.display = "none";
   document.getElementById("resultados").style.display = "block";
@@ -350,7 +342,7 @@ function presentarNota() {
     resultDocument = xsltProcessor.transformToFragment(xml_Doc, document);
     document.getElementById("resultados").appendChild(resultDocument);
   }
-  darRespuestaHtml("Tu nota es de "+nota.toFixed(2)+" sobre 10 puntos.");
+  alert ("Tu nota es de "+nota.toFixed(2)+" sobre 10 puntos.");
 }
 
 function comprobar(formulario) {
@@ -467,8 +459,8 @@ function inicializar() {
 //Cronómetro
 
 function Reloj() {
-  var segundos =50;
-  var minutos =0;
+  var segundos =00;
+  var minutos =02;
   var s = document.getElementById("segundos");
   var m = document.getElementById("minutos");
   m.innerHTML = minutos;
