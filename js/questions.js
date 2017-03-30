@@ -13,6 +13,7 @@ var nota = 0;  //nota de la prueba sobre 10 puntos (tenemos 10  preguntas)
 var xml_Doc;
 var xsl_Doc = null;
 
+
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos entre otras acciones.
 window.onload = function() { 
@@ -53,6 +54,7 @@ window.onload = function() {
  xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
      gestionarXml(this);
+     Reloj();
     }
  };
  xhttp.open("GET", "xml/questions.xml", true);
@@ -325,6 +327,7 @@ function ponerDatosCheckboxHtml(elementoHTML, elementoXML, checkboxradioHTML, no
   }
 }
 
+
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
 
@@ -457,4 +460,69 @@ function comprobar(formulario) {
 function inicializar() {
   document.getElementById("resultados").innerHTML = "";
   nota = 0;
+}
+
+
+//****************************************************************************************************
+//Cronómetro
+
+function Reloj() {
+  var segundos =5;
+  var minutos =0;
+  var s = document.getElementById("segundos");
+  var m = document.getElementById("minutos");
+  m.innerHTML = minutos;
+  // no interesa tambien una linea como la siguiente?
+  // s.innerHTML = segundos;
+  // meto la funcion del reloj en una variable tickTick
+  tickTick = setInterval(function() {
+    if(segundos>0) {
+      segundos--;
+      if (segundos<10) {
+        segundos = "0"+segundos;//Añade un '0' cuando los segundos son menos de 10.
+      }
+      s.innerHTML=segundos;
+    }            
+    else {
+      if(minutos>0) {
+        minutos--;
+        if (minutos<10) {
+          minutos = "0"+minutos;
+        }//Añade un '0' cuando los minutos son menores 10
+        m.innerHTML=minutos;
+        segundos=59;
+        s.innerHTML=segundos;
+      }
+      else {
+        clearInterval(tickTick);
+        stop();
+      }//Detiene la aplicacion y muestra resultado.
+    }
+  } ,1000);
+}
+ 
+function stop(){
+  alert("Se acabo su tiempo");
+        //Corregir pregunta 1 texto
+      corregirTXT(formElement.getElementsByClassName("texto")[0].value, answer1_txt, xml_Doc.getElementById("preg001"));
+      //Corregir pregunt 2 radio
+      corregirRadio(formElement.programa, answer2_rad, xml_Doc.getElementById("preg002"));
+      //Corregir pregunta 3 texto
+      corregirTXT(formElement.getElementsByClassName("texto")[1].value, answer3_txt, xml_Doc.getElementById("preg003"));
+      //Corregir pregunta 4 select
+      corregirSelect(formElement.getElementsByTagName("select")[0], answer4_sel, xml_Doc.getElementById("preg004"));
+      //Corregir pregunta 5 radio
+      corregirRadio(formElement.interferencia, answer5_rad, xml_Doc.getElementById("preg005"));
+      //Corregir pregunta 6 select
+      corregirSelect(formElement.getElementsByTagName("select")[1], answer6_sel, xml_Doc.getElementById("preg006"));
+      //Corregir pregunta 7 checkbox
+      corregirCheckbox(formElement.elementos, answer7_check, xml_Doc.getElementById("preg007"));
+      //Corregir pregunta 8 multiple
+      corregirMultiple(formElement.getElementsByTagName("select")[2], answer8_mul, xml_Doc.getElementById("preg008"));
+      //Corregir pregunta 9 checkbox
+      corregirCheckbox(formElement.formatos, answer9_check, xml_Doc.getElementById("preg009"));
+     //Corregir pregunta 10 multiple
+      corregirMultiple(formElement.getElementsByTagName("select")[3], answer10_mul, xml_Doc.getElementById("preg010"));
+        presentarNota();
+  return false;
 }
