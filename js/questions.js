@@ -47,7 +47,7 @@ window.onload = function() {
       presentarNota();
     }
     return false;
-  }
+  };
 
  //LEER XML de xml/preguntas.xml
  var xhttp = new XMLHttpRequest();
@@ -69,7 +69,7 @@ window.onload = function() {
   };
  xhttp2.open("GET", "xml/questions.xsl", true);
  xhttp2.send();
-}
+};
 
 
 
